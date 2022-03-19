@@ -20,5 +20,13 @@
     "node"
   ],
   "author": "Brandon Nozaki Miller",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RIAEvangelist/is-my-node-supply-chain-secure.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RIAEvangelist/is-my-node-supply-chain-secure/issues"
+  },
+  "homepage": "https://github.com/RIAEvangelist/is-my-node-supply-chain-secure#readme"
 }
