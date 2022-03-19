@@ -1,0 +1,24 @@
+{
+  "name": "is-my-node-supply-chain-secure",
+  "version": "0.0.1",
+  "description": "Scans your computer for node modules that are potentially vulnerable to supply chain attacks. You still need to review the code of modules that are not vulnerable, but this helps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "supplychain",
+    "supply",
+    "chain",
+    "attack",
+    "scan",
+    "secure",
+    "is",
+    "my",
+    "supply",
+    "chain",
+    "node"
+  ],
+  "author": "Brandon Nozaki Miller",
+  "license": "MIT"
+}
