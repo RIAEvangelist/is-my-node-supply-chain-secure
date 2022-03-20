@@ -21,7 +21,7 @@ async function read(path,type){
                     return;
                 }
 
-                console.log(`Checking module ${path}`)
+                let vulnerabilityCount=0;
 
                 for(const version of Object.values(parsedData.dependencies)){
                     try{
@@ -31,7 +31,6 @@ async function read(path,type){
                             )
                         ){
                             //maybe safe...
-                            console.log(version[0],Number(version[0]))
                             continue;
                         }
                     }catch(err){
@@ -39,7 +38,13 @@ async function read(path,type){
                         continue;
                     }
 
-                    console.log('vulnerablity found')
+                    vulnerabilityCount++;
+                }
+
+                if(vulnerabilityCount>0){
+                    console.log(`${path}
+has ${vulnerabilityCount} vulnerabilities.                    
+                    `)
                 }
 
             }catch(err){
