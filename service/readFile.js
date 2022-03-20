@@ -1,4 +1,7 @@
 import fs from 'fs';
+import Is from 'strong-type';
+
+const is=new Is(false);
 
 async function read(path,type){
     var rawdata = '';
@@ -17,7 +20,27 @@ async function read(path,type){
                     //maybe safe...
                     return;
                 }
-                console.log(path,parsedData.dependencies,parsedData.devDependencies);
+
+                console.log(`Checking module ${path}`)
+
+                for(const version of Object.values(parsedData.dependencies)){
+                    try{
+                        if(
+                            !is.NaN(
+                                Number(version[0])
+                            )
+                        ){
+                            //maybe safe...
+                            console.log(version[0],Number(version[0]))
+                            continue;
+                        }
+                    }catch(err){
+                        console.log(`ERR: ${err}`);
+                        continue;
+                    }
+
+                    console.log('vulnerablity found')
+                }
 
             }catch(err){
                 //weird JSON

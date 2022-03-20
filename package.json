@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/RIAEvangelist/is-my-node-supply-chain-secure/issues"
   },
-  "homepage": "https://github.com/RIAEvangelist/is-my-node-supply-chain-secure#readme"
+  "homepage": "https://github.com/RIAEvangelist/is-my-node-supply-chain-secure#readme",
+  "dependencies": {
+    "strong-type": "^1.1.0"
+  }
 }
