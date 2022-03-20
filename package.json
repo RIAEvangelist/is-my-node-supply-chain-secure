@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Scans your computer for node modules that are potentially vulnerable to supply chain attacks. You still need to review the code of modules that are not vulnerable, but this helps.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
