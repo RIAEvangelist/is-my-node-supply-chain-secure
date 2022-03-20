@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/RIAEvangelist/is-my-node-supply-chain-secure#readme",
   "dependencies": {
+    "nozaki-colors": "^1.0.1",
     "strong-type": "^1.1.0"
   }
 }

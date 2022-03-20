@@ -1,5 +1,6 @@
 import fs from 'fs';
 import Is from 'strong-type';
+import {color,background,style,resetAllColors} from 'nozaki-colors';
 
 const is=new Is(false);
 
@@ -42,8 +43,8 @@ async function read(path,type){
                 }
 
                 if(vulnerabilityCount>0){
-                    console.log(`${path}
-has ${vulnerabilityCount} vulnerabilities.                    
+                    console.log(`${style.underlineOn}${path}${style.underlineOff}
+${background.red}has ${color.magenta}${vulnerabilityCount}${color.end} vulnerabilities.${color.resetAllColors}                    
                     `)
                 }
 
