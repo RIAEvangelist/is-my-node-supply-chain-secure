@@ -13,8 +13,11 @@ async function read(path,type){
         case 'JSON' : 
             try{
                 parsedData = JSON.parse(rawdata);
-
-                console.log(Object.keys(parsedData));
+                if(!parsedData.dependencies||!parsedData.devDependencies){
+                    //maybe safe...
+                    return;
+                }
+                console.log(path,parsedData.dependencies,parsedData.devDependencies);
 
             }catch(err){
                 //weird JSON
