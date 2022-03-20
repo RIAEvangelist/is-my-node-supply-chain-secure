@@ -1,22 +1,23 @@
 import path from 'path';
 import fs from 'fs';
+import read from './readFile.js';
 
-function fromDir(startPath,filter,recurse){
+async function fromDir(startPath='',filter='',recurse=false){
     if (!fs.existsSync(startPath)){
         return;
     }
 
-    var dir=[];
+    let dir=[];
     try{
         dir=fs.readdirSync(startPath);
     }catch(err){
         //probably restricted permissions
     }
-    var files=[];
+    const files=[];
     
-    for(var i=0;i<dir.length;i++){
-        var filename=path.join(startPath,dir[i]);
-        var stat=null;
+    for(let i=0;i<dir.length;i++){
+        const filename=path.join(startPath,dir[i]);
+        let stat=null;
         
         try{
             stat=fs.lstatSync(filename);
@@ -25,16 +26,18 @@ function fromDir(startPath,filter,recurse){
             continue;
         }
         if (stat.isDirectory()){
-            var recursedFiles=fromDir(filename,filter); //recurse
-            (recursedFiles.length>0)? files.push.apply(files, recursedFiles): null;
+            const recursedFiles=fromDir(filename,filter); //recurse
+            (recursedFiles.length>0)? files.push(...recursedFiles): null;
         }
         else if (filename.indexOf(filter)>=0) {
-            files.push(filename.replace(/\\/g,'/'));
+            read(filename.replace(/\\/g,'/'),'JSON');
         };
     };
 
     return files;
 };
+
+
 
 export {
     fromDir as default,

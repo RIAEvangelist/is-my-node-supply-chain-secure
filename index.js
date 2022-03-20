@@ -1,9 +1,5 @@
-import fs from 'fs';
 import find from './service/findFiles.js';
-import read from './service/readFile.js';
 
+await find('/','package.json');
 
-const rootFiles=await find('/','package.json');
-
-console.log(rootFiles);
 

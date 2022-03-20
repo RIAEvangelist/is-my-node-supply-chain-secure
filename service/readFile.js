@@ -13,6 +13,9 @@ async function read(path,type){
         case 'JSON' : 
             try{
                 parsedData = JSON.parse(rawdata);
+
+                console.log(Object.keys(parsedData));
+
             }catch(err){
                 //weird JSON
                 parsedData={}
